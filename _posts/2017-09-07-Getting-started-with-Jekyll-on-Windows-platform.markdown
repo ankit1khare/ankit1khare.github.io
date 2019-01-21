@@ -3,6 +3,7 @@ layout: post
 title: "Getting started with Jekyll on Windows platform"
 description: "Setting-up Jekyll while using windows"
 img: jekyll-poster.png
+excerpt: "There are many blogs and videos on how to setup Jekyll on windows. But it's quite confusing and complex to set it up on windows especially if someone doesn't have a good knowledge of Linux and Jekyll. The problem arises because of version incompatibility and windows platform where Jekyll is officially not supported."
 date: 2017-09-07 18:20 +0200
 ---
 
