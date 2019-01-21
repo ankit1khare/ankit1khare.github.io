@@ -6,9 +6,9 @@ excerpt: Quick intro to github and easy reference of frequently used commands
 date:   2017-09-28 14:55:52 +0200
 ---
 Here are two very interesting videos which would help you get started with GitHub:
-1. [https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=3s](https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=3s) (Intro)
-2. [https://www.youtube.com/watch?v=HVsySz-h9r4&t=1009s](https://www.youtube.com/watch?v=HVsySz-h9r4&t=1009s) (Intro)
-3. [https://www.youtube.com/watch?v=xuB1Id2Wxak&t=1701s](https://www.youtube.com/watch?v=xuB1Id2Wxak&t=1701s) (Intro + details)
+1. [https://www.youtube.com/watch?v=SWYqp7iY_Tc](https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=3s){:target="_blank"} (Intro)
+2. [https://www.youtube.com/watch?v=HVsySz-h9r4](https://www.youtube.com/watch?v=HVsySz-h9r4&t=1009s){:target="_blank"} (Intro)
+3. [https://www.youtube.com/watch?v=xuB1Id2Wxak](https://www.youtube.com/watch?v=xuB1Id2Wxak&t=1701s){:target="_blank"} (Intro + details)
 
 Common commands and their use:
 touch gitignore
