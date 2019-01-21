@@ -2,6 +2,7 @@
 layout: post
 title:  "My notes on GitHub!"
 description: Intro to GitHub
+excerpt: Quick intro to github and easy reference of frequently used commands 
 date:   2017-09-28 14:55:52 +0200
 ---
 Here are two very interesting videos which would help you get started with GitHub:
