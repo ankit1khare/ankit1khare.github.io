@@ -12,27 +12,27 @@ Here are two very interesting videos which would help you get started with GitHu
 
 Common commands and their use:
 touch gitignore
--git clone {url} {folder where to clone}
--git remote add origin {git url}
--git remote -v
--git init
--git status
--git add -A
--git commit -m "msg"
--git log
--git diff
--git pull origin master
--git push -u origin master
+- git clone {url} {folder where to clone}
+- git remote add origin {git url}
+- git remote -v
+- git init
+- git status
+- git add -A
+- git commit -m "msg"
+- git log
+- git diff
+- git pull origin master
+- git push -u origin master
 
 Common Branching commands:
--git branch {brname}
--git Branch
--git checkout {brname}
--git push -u origin {brname}
+- git branch {brname}
+- git Branch
+- git checkout {brname}
+- git push -u origin {brname}
 
 Few other useful commands:
--touch filename.txt
--git remote get-url origin
--git remote set-url origin  git@github.com:ankit1khare/Img-Cap.git
--git reset HEAD --
--git rm --cached .
+- touch filename.txt
+- git remote get-url origin
+- git remote set-url origin  git@github.com:ankit1khare/Img-Cap.git
+- git reset HEAD --
+- git rm --cached . 
