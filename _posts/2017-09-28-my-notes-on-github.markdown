@@ -49,6 +49,9 @@ The branch will contain everything in the master branch
 - git checkout {brname}
 move to the branch specified
 
+- git checkout -b[ branch_name]
+<br>This command will create a new branch and checkout the new branch at the same time.
+
 - git push -u origin {brname}
 push branch to central repo. Be on the branch which you are pushing. 
 
@@ -60,4 +63,13 @@ Few other useful commands:
 A little tricky. I'll have to explain this in another post
 
 - git rm --cached . 
-Suppose you added a file to staging area. But now you want to remove it since it is not needed anymore but might be needed later on. Use this command to remove a file from index before commit. You have files indexed before commit but you want to remove one of them from index so that you don't commit it accidentally. Changes to the file remain intact. This doesn't apply to "untracked" files.
+<br>Suppose you added a file to staging area. But now you want to remove it since it is not needed anymore but might be needed later on. Use this command to remove a file from index before commit. You have files indexed before commit but you want to remove one of them from index so that you don't commit it accidentally. Changes to the file remain intact. This doesn't apply to "untracked" files.
+
+- git merge <branch_name>
+<br>Suppose you want to merge your new branch with master. Then you must be on master branch and the branch name in above command must be your new branch. So, be on destination branch where merging is happening.
+
+- git rebase <branch-name>
+<br> You are on master. And you have a branch ahead of master. Now, when you rebase the branch it will copy all the new content from your branch to master and set the head of your branch to the tip of your master linearly. So, master will have everything that was extra in new branch but it would seem like you developed all this linearly
+  
+  
+  
