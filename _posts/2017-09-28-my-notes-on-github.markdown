@@ -6,10 +6,10 @@ excerpt: Quick intro to github and easy reference of frequently used commands
 date:   2017-09-28 14:55:52 +0200
 ---
 **Here are two very interesting videos which would help you get started with GitHub:**
-1. [https://www.youtube.com/watch?v=SWYqp7iY_Tc](https://www.youtube.com/watch?v=SWYqp7iY_Tc target="_blank")  - Intro
-2. [https://www.youtube.com/watch?v=HVsySz-h9r4](https://www.youtube.com/watch?v=HVsySz-h9r4 target="_blank") - Intro
-3. [https://www.youtube.com/watch?v=xuB1Id2Wxak](https://www.youtube.com/watch?v=xuB1Id2Wxak target="_blank") - Intro + few details
-4. [Playlist](https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx target="_blank") - Intro + a lot of details
+1. <a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="_blank"> https://www.youtube.com/watch?v=SWYqp7iY_Tc</a> - Intro  
+2. <a href="https://www.youtube.com/watch?v=HVsySz-h9r4" target="_blank"> https://www.youtube.com/watch?v=HVsySz-h9r4</a> - Intro
+3. <a href="https://www.youtube.com/watch?v=xuB1Id2Wxak" target="_blank"> https://www.youtube.com/watch?v=xuB1Id2Wxak</a> - Intro + few details
+4. <a href="https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx" target="_blank"> Playlist </a>- Intro + a lot of details
 
 **Let's start with one-liners:**
 - git is a version control tool 
