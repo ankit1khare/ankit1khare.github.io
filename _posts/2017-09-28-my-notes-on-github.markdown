@@ -24,7 +24,7 @@ date:   2017-09-28 14:55:52 +0200
 
 **Setup:**
 - ssh-keygen
-- cat <path of ssh key>
+- cat {path of ssh key}
 <br> Add the key to your github settings. After this, you will be able to push or pull from your central repo.
   
 <br>
