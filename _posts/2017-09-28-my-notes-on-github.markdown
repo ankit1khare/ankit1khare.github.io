@@ -10,7 +10,7 @@ date:   2017-09-28 14:55:52 +0200
 2. [https://www.youtube.com/watch?v=HVsySz-h9r4](https://www.youtube.com/watch?v=HVsySz-h9r4&t=1009s){:target="_blank"} (Intro)
 3. [https://www.youtube.com/watch?v=xuB1Id2Wxak](https://www.youtube.com/watch?v=xuB1Id2Wxak&t=1701s){:target="_blank"} (Intro + a little more details)
 
-4. [https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx](Corey's playlist for git){:target="_blank"}(Intro + a lot of details)
+4. [https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx](Corey's playlist for git){:target="_blank"} (Intro + a lot of details)
 
 **Let's start with one-liners:**
 - git is a version control tool 
