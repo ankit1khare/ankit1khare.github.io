@@ -91,4 +91,10 @@ A little tricky. I'll have to explain this in another post
 
 - git rebase <branch-name>
 <br> You are on master. And you have a branch ahead of master. Now, when you rebase the branch it will copy all the new content from your branch to master and set the head of your branch to the tip of your master linearly. So, master will have everything that was extra in new branch but it would seem like you developed all this linearly.
-  
+ 
+- git branch -d <branch_name>
+-git push origin --delete <branch_name>
+- git branch -a
+<br> display names of all branches with their locations (remote or local)
+
+
