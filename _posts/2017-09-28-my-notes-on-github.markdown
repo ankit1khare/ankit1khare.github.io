@@ -28,6 +28,7 @@ date:   2017-09-28 14:55:52 +0200
 <br> Add the key to your github settings. After this, you will be able to push or pull from your central repo.
   
 <br>
+
 **Common commands and their use:**
 - git clone {url} {folder where to clone}
 - git init
