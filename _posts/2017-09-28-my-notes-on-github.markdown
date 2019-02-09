@@ -47,7 +47,7 @@ adds the files to the staging area and then commits them.
 
 - git log
 - git diff
-check the difference between working tree (your files in the project folder) and the local repository  
+<br>check the difference between working tree (your files in the project folder) and the local repository  
 
 <br>
 
@@ -70,7 +70,7 @@ move to the branch specified
 <br>This command will create a new branch and checkout the new branch at the same time.
 
 - git push -u origin {brname}
-push branch to central repo. Be on the branch which you are pushing. 
+<br>push branch to central repo. Be on the branch which you are pushing. 
 <br><br>
 
 **Few other useful commands:**
