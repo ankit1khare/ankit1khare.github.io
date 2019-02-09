@@ -50,6 +50,7 @@ adds the files to the staging area and then commits them.
 check the difference between working tree (your files in the project folder) and the local repository  
 
 <br>
+
 - git pull origin master
 - git push -u origin master
 
@@ -61,6 +62,7 @@ check the difference between working tree (your files in the project folder) and
 The branch will contain everything in the master branch
 
 <br>
+
 - git checkout {brname}
 move to the branch specified
 
