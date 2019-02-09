@@ -5,12 +5,12 @@ description: Intro to GitHub
 excerpt: Quick intro to github and easy reference of frequently used commands 
 date:   2017-09-28 14:55:52 +0200
 ---
-Here are two very interesting videos which would help you get started with GitHub:
+**Here are two very interesting videos which would help you get started with GitHub:**
 1. [https://www.youtube.com/watch?v=SWYqp7iY_Tc](https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=3s){:target="_blank"} (Intro)
 2. [https://www.youtube.com/watch?v=HVsySz-h9r4](https://www.youtube.com/watch?v=HVsySz-h9r4&t=1009s){:target="_blank"} (Intro)
 3. [https://www.youtube.com/watch?v=xuB1Id2Wxak](https://www.youtube.com/watch?v=xuB1Id2Wxak&t=1701s){:target="_blank"} (Intro + details)
 
-Let's start with one-liners:
+**Let's start with one-liners:**
 - git is a version control tool 
 - Github Inc is a organization that provides web-based hosting services for distributed version control
 - Github Inc is git based and they have their own features as well
@@ -21,7 +21,8 @@ Let's start with one-liners:
 - git is secure and it follows SHAI encryption
 - git is follows a non-linear structure called Directed Acyclic Graph (DAG)
 <br><br>
-Common commands and their use:
+
+**Common commands and their use:**
 - git clone {url} {folder where to clone}
 - git init
 - git status
@@ -33,18 +34,23 @@ Common commands and their use:
 - git commit -m "msg"
 - git commit -a -m "msg"
 adds the files to the staging area and then commits them.
+
 <br>
 - git log
 - git diff
 check the difference between working tree (your files in the project folder) and the local repository  
+
 <br>
 - git pull origin master
 - git push -u origin master
+
 <br><br>
-Common Branching commands:
+
+**Common Branching commands:**
 - git Branch
 - git branch {brname}
 The branch will contain everything in the master branch
+
 <br>
 - git checkout {brname}
 move to the branch specified
@@ -55,7 +61,8 @@ move to the branch specified
 - git push -u origin {brname}
 push branch to central repo. Be on the branch which you are pushing. 
 <br><br>
-Few other useful commands:
+
+**Few other useful commands:**
 - git remote get-url origin
 - git remote set-url origin  <git@github.com:ankit1khare/Img-Cap.git>
 
