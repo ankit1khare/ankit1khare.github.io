@@ -44,6 +44,7 @@ adds the files to the staging area and then commits them.
 - git checkout <last 8 digit of your commit hash id> <filename to revert>
 
 <br>
+
 - git log
 - git diff
 check the difference between working tree (your files in the project folder) and the local repository  
