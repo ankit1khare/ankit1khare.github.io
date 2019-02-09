@@ -22,6 +22,12 @@ date:   2017-09-28 14:55:52 +0200
 - git is follows a non-linear structure called Directed Acyclic Graph (DAG)
 <br><br>
 
+**Setup:**
+- ssh-keygen
+- cat <path of ssh key>
+<br> Add the key to your github settings. After this, you will be able to push or pull from your central repo.
+  
+<br>
 **Common commands and their use:**
 - git clone {url} {folder where to clone}
 - git init
@@ -34,6 +40,7 @@ date:   2017-09-28 14:55:52 +0200
 - git commit -m "msg"
 - git commit -a -m "msg"
 adds the files to the staging area and then commits them.
+- git checkout <last 8 digit of your commit hash id> <filename to revert>
 
 <br>
 - git log
