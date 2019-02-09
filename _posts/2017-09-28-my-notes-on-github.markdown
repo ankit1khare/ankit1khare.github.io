@@ -19,8 +19,8 @@ Let's start with one-liners:
 - git is lightweight (it doesn't use a lot of space or processing power of your computer)
 - git does lossless compression of files to store them on local repository or central repository 
 - git is secure and it follows SHAI encryption
-- git is follows a non-linear structure called Acyclic Graph
-
+- git is follows a non-linear structure called Directed Acyclic Graph (DAG)
+<br><br>
 Common commands and their use:
 - git clone {url} {folder where to clone}
 - git init
@@ -28,24 +28,24 @@ Common commands and their use:
 - git remote add origin {git url}
 - git remote -v
 
-
+<br><br>
 - git add -A
 - git commit -m "msg"
 - git commit -a -m "msg"
 adds the files to the staging area and then commits them.
-
+<br>
 - git log
 - git diff
 check the difference between working tree (your files in the project folder) and the local repository  
-
+<br>
 - git pull origin master
 - git push -u origin master
-
+<br><br>
 Common Branching commands:
 - git Branch
 - git branch {brname}
 The branch will contain everything in the master branch
-
+<br>
 - git checkout {brname}
 move to the branch specified
 
@@ -54,7 +54,7 @@ move to the branch specified
 
 - git push -u origin {brname}
 push branch to central repo. Be on the branch which you are pushing. 
-
+<br><br>
 Few other useful commands:
 - git remote get-url origin
 - git remote set-url origin  <git@github.com:ankit1khare/Img-Cap.git>
@@ -68,8 +68,9 @@ A little tricky. I'll have to explain this in another post
 - git merge <branch_name>
 <br>Suppose you want to merge your new branch with master. Then you must be on master branch and the branch name in above command must be your new branch. So, be on destination branch where merging is happening.
 
+- git branch --merged
+<br> Displays all the merges occured so far.
+
 - git rebase <branch-name>
-<br> You are on master. And you have a branch ahead of master. Now, when you rebase the branch it will copy all the new content from your branch to master and set the head of your branch to the tip of your master linearly. So, master will have everything that was extra in new branch but it would seem like you developed all this linearly
-  
-  
+<br> You are on master. And you have a branch ahead of master. Now, when you rebase the branch it will copy all the new content from your branch to master and set the head of your branch to the tip of your master linearly. So, master will have everything that was extra in new branch but it would seem like you developed all this linearly.
   
