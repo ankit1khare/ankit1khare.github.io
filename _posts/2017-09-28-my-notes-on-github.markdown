@@ -81,7 +81,7 @@ move to the branch specified
 - git reset HEAD --
 A little tricky. I'll have to explain this in another post
 
-- git rm --cached . 
+- git rm --cached <file_name> 
 <br>Suppose you added a file to staging area. But now you want to remove it since it is not needed anymore but might be needed later on. Use this command to remove a file from index before commit. You have files indexed before commit but you want to remove one of them from index so that you don't commit it accidentally. Changes to the file remain intact. This doesn't apply to "untracked" files.
 
 - git merge <branch_name>
