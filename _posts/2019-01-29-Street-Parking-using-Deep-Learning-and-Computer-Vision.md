@@ -17,7 +17,8 @@ Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a par
 Observe the change of color in the other parking spots. It is primarily due to moving camera while recording, the car parked in the area gets out from the marked spot. Using Twilio API, we can easy generate a number and use it to send a custom message to our own cell phone whenever there's a vacancy available to park. There's a great medium post here which describes the process flow. The underlying assumption is that, the first frame will determine the parking spots and no car in the first frame should be a moving one.
 
 <p>
-    <img src="gifs/assumption_test1.gif" alt>
+    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/assumption_test1.gif?raw=true" alt>
+    <br>
     <em>Assumption: The first frame will determine the parking spots and no car in the first frame should be in motion</em>
 </p>
 
