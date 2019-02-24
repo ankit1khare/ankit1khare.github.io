@@ -8,26 +8,22 @@ date: 2019-01-29 16:20 +0200
 
 Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
 
-![](gifs/test_vid.gif)
+![Pardon me for shaking hands. It was cold outside](gifs/test_vid.gif)
 
-
-Pardon me for shaking hands. It was cold outside
 
 Observe the change of color in the other parking spots. It is primarily due to moving camera while recording, the car parked in the area gets out from the marked spot. Using Twilio API, we can easy generate a number and use it to send a custom message to our own cell phone whenever there's a vacancy available to park. There's a great medium post here which describes the process flow. The underlying assumption is that, the first frame will determine the parking spots and no car in the first frame should be a moving one.
 
 
-![](gifs/assumption_test1.gif)
-Assumption: The first frame will determine the parking spots and no car in the first frame should be in motion
+![Assumption: The first frame will determine the parking spots and no car in the first frame should be in motion](gifs/assumption_test1.gif)
 
 
 This is very inconvenient. We can't expect to take our cell phone out and get bluffed by a moving car just because it was in the first frame. So, we need to think of something better. What about identifying the static cars by observing them for 5 seconds and assuming that they are parked in the authorized parking area only. This way, no moving cars would hamper our system.
 
-![](gifs/better_test1.gif)
-Observe the passing by car at the beginning of the video. Our new method is working great!
+![Observe the passing by car at the beginning of the video. Our new method is working great!](gifs/better_test1.gif)
 
 
 The approach is pretty simple. I just took two frames and compared them for a possible motion using frame subtraction. Next I eroded the area occupied by the moving vehicle so that MASK-RCNN would not capture it.
-
+![This frame makes the operations performed in the above code very intuitive I guess](gifs/)
 
 
 
@@ -39,14 +35,12 @@ For full code, check park_clever.ipynb by visiting the Git repo hereThis frame m
 
 
 Let's check how well our system performs in night, just for the fun :)
-![](gifs/night_blur_test.gif)
-Credits to Mask RCNN, works pretty well even at night with a bad quality input video
+![Credits to Mask RCNN, works pretty well even at night with a bad quality input video](gifs/night_blur_test.gif)
 
 
 What if we use IPhone 7 plus ? let's see:
 
-![](gifs/night_better_test.gif)
-Far better! It's funny how the leftmost car gets identified by MASK-RCNN with full confidence as soon as the headlights of the 'Camry' focus on it
+![Far better! It's funny how the leftmost car gets identified by MASK-RCNN with full confidence as soon as the headlights of the 'Camry' focus on it](gifs/night_better_test.gif)
 
 
 Easy, right! Now all I have for you guys is to check my other Yolo repository to see how we can speed up the process using batch-processing. Essentially, I am asking you to read multiple frames, keep them in buffer and then send them for processing to GPU at once to maximize GPU utilization. This way you might be able to take advantage of colab's 12 GB of free K80.
