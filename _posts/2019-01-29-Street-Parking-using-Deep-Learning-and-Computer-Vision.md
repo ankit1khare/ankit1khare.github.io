@@ -16,13 +16,13 @@ Pardon me for shaking hands. It was cold outside
 Observe the change of color in the other parking spots. It is primarily due to moving camera while recording, the car parked in the area gets out from the marked spot. Using Twilio API, we can easy generate a number and use it to send a custom message to our own cell phone whenever there's a vacancy available to park. There's a great medium post here which describes the process flow. The underlying assumption is that, the first frame will determine the parking spots and no car in the first frame should be a moving one.
 
 
-![](assumption_test1.gif)
+![](gifs/assumption_test1.gif)
 Assumption: The first frame will determine the parking spots and no car in the first frame should be in motion
 
 
 This is very inconvenient. We can't expect to take our cell phone out and get bluffed by a moving car just because it was in the first frame. So, we need to think of something better. What about identifying the static cars by observing them for 5 seconds and assuming that they are parked in the authorized parking area only. This way, no moving cars would hamper our system.
 
-![](better_test1.gif)
+![](gifs/better_test1.gif)
 Observe the passing by car at the beginning of the video. Our new method is working great!
 
 
@@ -39,13 +39,13 @@ For full code, check park_clever.ipynb by visiting the Git repo hereThis frame m
 
 
 Let's check how well our system performs in night, just for the fun :)
-![](night_blur_test.gif)
+![](gifs/night_blur_test.gif)
 Credits to Mask RCNN, works pretty well even at night with a bad quality input video
 
 
 What if we use IPhone 7 plus ? let's see:
 
-![](night_better_test.gif)
+![](gifs/night_better_test.gif)
 Far better! It's funny how the leftmost car gets identified by MASK-RCNN with full confidence as soon as the headlights of the 'Camry' focus on it
 
 
