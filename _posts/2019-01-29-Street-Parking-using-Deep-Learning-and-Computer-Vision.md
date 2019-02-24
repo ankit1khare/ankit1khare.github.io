@@ -39,7 +39,7 @@ The approach is pretty simple. I just took two frames and compared them for a po
     <em>This frame makes the operations performed in the above code very intuitive I guess</em>
 </p>
 
-
+```python
     while video_capture.isOpened():
         success, frame = video_capture.read()
 
@@ -63,7 +63,7 @@ The approach is pretty simple. I just took two frames and compared them for a po
           img, c, h = cv2.findContours(eroded, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
           frame2 = cv2.drawContours(frame2, c, -1, (0,0,0), cv2.FILLED)
 
-
+```
 
 
 
