@@ -10,6 +10,7 @@ Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a par
 
 <p>
     <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/test_vid.gif" alt>
+    <br>
     <em>Pardon me for shaking hands. It was cold outside</em>
 </p>
 
