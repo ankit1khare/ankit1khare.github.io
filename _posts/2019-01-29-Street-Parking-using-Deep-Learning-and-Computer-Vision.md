@@ -8,7 +8,7 @@ date: 2019-01-29 16:20 +0200
 
 Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
 
-![](~/images/test_vid.gif)
+![](gifs/test_vid.gif)
 
 
 Pardon me for shaking hands. It was cold outside
