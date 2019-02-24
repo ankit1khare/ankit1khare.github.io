@@ -25,28 +25,28 @@ This is very inconvenient. We can't expect to take our cell phone out and get bl
 The approach is pretty simple. I just took two frames and compared them for a possible motion using frame subtraction. Next I eroded the area occupied by the moving vehicle so that MASK-RCNN would not capture it.
 ![This frame makes the operations performed in the above code very intuitive I guess](gifs/1_x6wTWuWlwlnic30Mj61S0g.png)
 
-  while video_capture.isOpened():
-      success, frame = video_capture.read()
+    while video_capture.isOpened():
+        success, frame = video_capture.read()
 
-      if not success:
-          print("couldn't read video")
-          break
+        if not success:
+            print("couldn't read video")
+            break
 
-      elif counter<40:
-        #create another video reader object to compare the two frames   and verify the possibility of motion
-        success, frame2 = video_capture.read()
-        d = cv2.absdiff(frame, frame2)  
-        grey = cv2.cvtColor(d, cv2.COLOR_BGR2GRAY)
-        blur = cv2.GaussianBlur(grey, (1, 1), 0)
-        ret, th = cv2.threshold( blur, 20, 255, cv2.THRESH_BINARY)
+        elif counter<40:
+          #create another video reader object to compare the two frames   and verify the possibility of motion
+          success, frame2 = video_capture.read()
+          d = cv2.absdiff(frame, frame2)  
+          grey = cv2.cvtColor(d, cv2.COLOR_BGR2GRAY)
+          blur = cv2.GaussianBlur(grey, (1, 1), 0)
+          ret, th = cv2.threshold( blur, 20, 255, cv2.THRESH_BINARY)
 
-        #perform these morphological transformations to erode the car which is moving so that it is not detected by MASKRCNN. Take the erosion levels to be high. 
-        dilated = cv2.dilate(th, np.ones((30, 30), np.uint8), iterations=1 )
-        eroded = cv2.erode(dilated, np.ones((30, 30), np.uint8), iterations=1 )
+          #perform these morphological transformations to erode the car which is moving so that it is not detected by MASKRCNN. Take the erosion levels to be high. 
+          dilated = cv2.dilate(th, np.ones((30, 30), np.uint8), iterations=1 )
+          eroded = cv2.erode(dilated, np.ones((30, 30), np.uint8), iterations=1 )
 
-        #fill the contours for even a better morphing of the vehicle
-        img, c, h = cv2.findContours(eroded, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        frame2 = cv2.drawContours(frame2, c, -1, (0,0,0), cv2.FILLED)
+          #fill the contours for even a better morphing of the vehicle
+          img, c, h = cv2.findContours(eroded, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+          frame2 = cv2.drawContours(frame2, c, -1, (0,0,0), cv2.FILLED)
 
 
 
