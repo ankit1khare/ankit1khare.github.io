@@ -9,7 +9,7 @@ date: 2019-01-29 16:20 +0200
 Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
 
 <p>
-    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/test_vid.gif" alt>
+    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/test_vid.gif?raw=true" alt>
     <br>
     <em>Pardon me for shaking hands. It was cold outside</em>
 </p>
@@ -25,7 +25,7 @@ Observe the change of color in the other parking spots. It is primarily due to m
 This is very inconvenient. We can't expect to take our cell phone out and get bluffed by a moving car just because it was in the first frame. So, we need to think of something better. What about identifying the static cars by observing them for 5 seconds and assuming that they are parked in the authorized parking area only. This way, no moving cars would hamper our system.
 
 <p>
-    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/better_test1.gif" alt>
+    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/better_test1.gif?raw=true" alt>
     <br>
     <em>Observe the passing by car at the beginning of the video. Our new method is working great!</em>
 </p>
@@ -33,7 +33,7 @@ This is very inconvenient. We can't expect to take our cell phone out and get bl
 
 The approach is pretty simple. I just took two frames and compared them for a possible motion using frame subtraction. Next I eroded the area occupied by the moving vehicle so that MASK-RCNN would not capture it.
 <p>
-    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/1_x6wTWuWlwlnic30Mj61S0g.png" alt>
+    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/1_x6wTWuWlwlnic30Mj61S0g.png?raw=true" alt>
     <br>
     <em>This frame makes the operations performed in the above code very intuitive I guess</em>
 </p>
@@ -73,14 +73,14 @@ For full code, check park_clever.ipynb by visiting the Git repo hereThis frame m
 Let's check how well our system performs in night, just for the fun :)
 
 <p>
-    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/night_blur_test.gif" alt>
+    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/night_blur_test.gif?raw=true" alt>
     <br>
     <em>Credits to Mask RCNN, works pretty well even at night with a bad quality input video</em>
 </p>
 
 What if we use IPhone 7 plus ? let's see:
 <p>
-    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/night_better_test.gif" alt>
+    <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/night_better_test.gif?raw=true" alt>
     <br>
     <em>Far better! It's funny how the leftmost car gets identified by MASK-RCNN with full confidence as soon as the headlights of the 'Camry' focus on it</em>
 </p>
