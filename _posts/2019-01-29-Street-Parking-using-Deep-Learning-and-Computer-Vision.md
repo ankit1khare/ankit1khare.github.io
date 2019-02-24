@@ -3,7 +3,7 @@ layout: post
 title: "Street Parking using Deep Learning and Computer Vision"
 description: "Detects vacant and occupied parking space on a street and sends a text whenever a space is available to park"
 excerpt: "Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy."
-date: 2019-01-29 16:20 +0900
+date: 2019-01-29 16:20 +0200
 ---
 
 Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
