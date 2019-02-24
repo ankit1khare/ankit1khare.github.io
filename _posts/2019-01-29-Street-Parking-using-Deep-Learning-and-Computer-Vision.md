@@ -8,7 +8,8 @@ date: 2019-01-29 16:20 +0200
 
 Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
 
-![](gifs/test_vid.gif)*Pardon me for shaking hands. It was cold outside*
+![](gifs/test_vid.gif)
+*Pardon me for shaking hands. It was cold outside*
 
 Observe the change of color in the other parking spots. It is primarily due to moving camera while recording, the car parked in the area gets out from the marked spot. Using Twilio API, we can easy generate a number and use it to send a custom message to our own cell phone whenever there's a vacancy available to park. There's a great medium post here which describes the process flow. The underlying assumption is that, the first frame will determine the parking spots and no car in the first frame should be a moving one.
 
