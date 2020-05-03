@@ -4,7 +4,7 @@ title: "Street Parking using Deep Learning and Computer Vision"
 description: "Detects vacant and occupied parking space on a street and sends a text whenever a space is available to park"
 excerpt: "Detects vacant and occupied parking space on a street and sends a text whenever a space is available to park"
 images:
-  - url: /blob/master/_posts/gifs/test_vid.gif
+  - url: /_posts/gifs/test_vid.gif
 date: 2019-01-29 16:20 +0200
 ---
 
