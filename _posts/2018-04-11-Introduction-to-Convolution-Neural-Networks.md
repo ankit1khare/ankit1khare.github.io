@@ -5,7 +5,7 @@ images:
   - url: /assets/Cover.png
 ---
 
-A Beginner's Guide To Understanding Convolutional Neural Networks
+Introduction to Convolutional Neural Networks
 
 ![](/assets/Cover.png)
 
@@ -42,22 +42,27 @@ First Layer – High Level Perspective
                Let's talk about what this convolution actually does from a high standard, though. One can think of each of these filters as feature identifiers. I'm talking about things like straight edges, simple colours, and curves when I say features. Think about the simplest features all the images have in common. Let's say that our first filter is 7 x 7 x 3, and will be a detector of curves. (In this section, let's overlook the fact that the filter is 3 units deep and only consider the filter's top depth slice and the image, for simplicity.) The filter will have a pixel structure as a curve detector in which there will be higher numerical values along the area that is a curve shape (remember, those filters we're talking about as numbers!).               
 
 ![](/assets/Filter.png)
+
 Now let's get back to mathematically visualizing this. When we have this filter at the top left corner of the input volume, multiplications are computed between the values of the filter and the pixel in that region. Now let's take an example of an image we'd like to classify, and put our filter in the top left corner.
 
 ![](/assets/OriginalAndFilter.png)
+
 Remember, what we need to do is multiply the values in the filter by the image's original pixel values.
 
 
 ![](/assets/FirstPixelMulitiplication.png)
+
 Basically, if there is a shape in the input image that generally resembles the curve this filter represents, then all of the multiplications summed up together will result in a large value! Now let's see what happens with our filter moving.
 
 
 ![](/assets/SecondMultiplication.png)
+
 The value is a lot smaller! This is because the image section contained nothing that responded to the curve detector filter. Remember, an activation map is the output of this conv layer. So, in the simple case of a one-filter convolution (and if that filter is a curve detector), the activation map shows the areas where curves in the picture are most likely to occur. In this example the top left of our activation map 26 x 26 x 1 (26 due to the 7x7 filter instead of 5x5) will be 6600. This high value means that there is probably some kind of curve in the volume of the input which caused the filter to activate. In our activation map, the top right value will be 0 because there was nothing in the input volume that caused the filter to activate (or, more simply, there was no curve in that area of the original image). Remember, this is for one filter only. This is just a filter that will detect lines curving outwards and to the right. For lines curving to the left or for straight edges we may have other filters. The more filters, the greater the activation map depth and the more information we have about the volume of inputs.
 
 Disclaimer: The filter I described in this section was simplistic to describe the math that is going on during a convolution. In the image below, you will see some examples of actual visualizations of the filters of a trained network's first conv layer. The main argument remains the same, nonetheless. The filters on the first layer converge around the input image and "activate" (or calculate high values) when input volume is the specific feature it is looking for.
 
 ![](/assets/FirstLayers.png)
+
 (Quick Note: The above image was taken from Stanford's CS 231N course taught by Andrej Karpathy and Justin Johnson. Recommend to anyone seeking a deeper understanding of CNNs.)
 
 
@@ -65,12 +70,15 @@ Going Deeper Through the Network
              Now, there are other layers in a traditional convolutionary neural network architecture that are interspersed between these layers. I would strongly encourage those interested to read about them and understand their function and effects, but in general, they do provide nonlinearities and dimensional preservation that help improve network robustness and control overfitting. So would look like a classic CNN architecture.
 
 ![](/assets/Table.png)
+
 However, the last layer is an important one which we will go into later. Just take a step back and review what we have learned up to now. We have talked about what the filters are designed to detect in the first conv layer. They detect features of low levels, such as edges and curves. As one would imagine, we need the network to be able to recognize higher-level features such as hands or paws or ears to predict whether an image is a type of object. So let's ponder what the network output is after the first conv layer. It would be a volume of 28 x 28 x 3 (assuming we will use three 5 x 5 x 3 filters). The output of the first conver layer becomes the input of the 2nd conv layer when we go through another conv layer. Now, that's a bit more difficult to visualize. When we spoke of the first layer, the input was simply the original image.When we talk about the 2nd conv layer, though, the input is the activation map(s) that result from the first layer. Thus each input layer basically describes the locations in the original image for which certain features of the low level appear. Now, if you apply a set of filters on top of that (pass it through the 2nd conv layer), the output will be activations representing features of higher levels. Types of these features might be semicircles (combining a curve and a straight edge) or squares (combining several straight edges). As you pass through the network and more conv layers, you get activation maps that represent increasingly complex features. You may have some filters at the end of the network that activate when handwriting occurs in the image, filters that activate when viewing pink objects etc. If you want more information about filter visualization in ConvNets, Matt Zeiler and Rob Fergus had an excellent research paper on the topic. Jason Yosinski also has a YouTube video which gives a great visual representation.Another interesting thing to note is that as you go deeper into the network, the filters start to have a larger and larger receptive field which means they can consider information from a larger area of the original input volume (another way to put it is that they are more responsive to a larger area of pixel space).
 
 Fully Connected Layer
              Now that we can detect these high-level features, a fully connected layer is attached to the network end by the icing on the cake. This layer basically takes an input volume (whatever the output is of the preceding conv or ReLU or pool layer) and outputs a N dimensional vector where N is the number of classes from which the program must choose. For example, if you wanted a program for digit classification, N would be 10, because there are 10 digits. Each number in this N dimension vector represents the likelihood of some class. For example, if the resulting vector for a digit classification program is [0 .1.1.75.0 0 0 0 0 0.05], then this represents a 10 percent probability of the image being a 1, a 10 percent probability of the image being a 2, a 75 percent probability of the image being a 3, and a 5 percent probability of the image being a 9 (Side note: there are other ways you can represent the output, but I'm a 3) The way this fully connected layer works is by looking at the output of the previous layer (which, as we remember, should represent the high-level activation maps) and determining which features are most correlated to a particular class.For example, if the program predicts that some image is a dog, the activation maps will have high values that represent high-level features like a paw or 4 legs etc. Similarly, if the program predicts that some image is a bird, the activation maps will contain high values that represent high-level features like wings or a beak, etc. Basically, an FC layer looks at what high-level features most closely correlate with a particular class and has particular weights so you get the right probabilities for the different classes when you calculate the products between the weights and the previous layer.
 
+
 ![](/assets/LeNet.png)
+
 Training (AKA:What Makes this Stuff Work)
                 Now, this is the one aspect of the neural networks that I have not yet deliberately mentioned and that is probably the most important part. You may have had lots of questions while reading. How do the filters know to look for edges and curves in the first conv layer? How does the layer that is fully connected know which activation maps to view? How do the filters know what values to have in every layer? The way the computer can adjust its filter values (or weights) is through a process called backpropagation training.
 
@@ -79,15 +87,19 @@ Before we get into backpropagation, first we have to take a step back and talk a
 Thus backpropagation can be divided into 4 separate sections, forward pass, loss function, backward pass and weight update. You take a training image during the forward pass which, as we recall, is a 32 x 32 x 3 array of numbers and passes it through the entire network. In our first example of training, since all the weights or filter values have been initialized randomly, the output is likely to be something like [.1.1.1.1.1.1.1.1.1], basically an output that does not give preference to any number in particular.With its current weights, the network is unable to search for those low-level features or is therefore unable to draw any reasonable conclusion as to what the classification might be. This relates to the backpropagation part of loss function. Remember that Training data is what we are using right now. That data has an image as well as a label. For example, let's say the first training image you input was a 3. The image label would be set to [0 0 0 1 0 0 0 0 0]. A loss function can be defined in many different ways, but MSE (mean squared error) is a common one, which is squared 1⁄2 times (actual-predicted).
 
 ![](/assets/Equation.png)
+
 Let's say this value is equal to the variable L. As you can imagine, the loss for the first pair of training images will be extremely high. Now, let's just think intuitively on this. We want to get to a point where the predicted label (ConvNet output) is the same as the training label (this means our network got its prediction right).We want to minimize the amount of loss we have to get there. Visualizing this as a simple problem of optimization in calculus, we want to find out which inputs (weights in our case) contributed most directly to the network's loss (or error).
 
 ![](/assets/Loss.png)
+
 This is the mathematical equivalent of a dL / dW in which W is the weights at a given layer. What we want to do now is to carry out a backward pass through the network, which determines which weights have contributed the most to the loss and find ways to adjust it so that the loss decreases. Once we calculate this derivative, we proceed to the final step, which is the weight update. This is where we take all of the filters' weights and update them so they change the gradient in the opposite direction.
 
 ![](/assets/Weight.png)
+
 The learning rate is a parameter selected by the programmer. A high learning rate means that the weight updates take bigger steps and therefore, it may take less time for the model to converge on an optimal set of weights. However, an overly high learning rate could result in jumps that are too large and not accurate enough to reach the optimum point.
 
 ![](/assets/HighLR.png)
+
 One training iteration is the process of forward pass, loss function, backward passage, and parameter update. For each set of training images the program will repeat this process for a fixed number of iterations (commonly called a batch).Once you finish updating the parameter on the last example of the training, hopefully the network should be trained well enough so that the layers' weights are correctly tuned.
 
 Testing
