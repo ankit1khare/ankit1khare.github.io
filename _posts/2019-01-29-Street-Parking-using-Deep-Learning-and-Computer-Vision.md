@@ -2,17 +2,18 @@
 layout: post
 title: "Street Parking using Deep Learning and Computer Vision"
 description: "Detects vacant and occupied parking space on a street and sends a text whenever a space is available to park"
-excerpt: "Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy."
+excerpt: <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/test_vid.gif?raw=true" style="max-width:100%;display: block;margin-left: auto;margin-right: auto;" alt>
 date: 2019-01-29 16:20 +0200
 ---
+
+Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
+
 <p>
     <img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/test_vid.gif?raw=true" style="max-width:100%;display: block;margin-left: auto;margin-right: auto;" alt>
     <center>
       <em>Pardon me for shaking hands. It was cold outside</em>
     </center>
 </p>
-
-Pre-trained Mask-RCNN from Matterport can be easily used to detect cars in a parking. In order to utilize it I recorded a video of the parking near my apartment. Even with my hands shaking due to cold, the overall prototype successfully detect an available parking space vacancy.
 
 Observe the change of color in the other parking spots. It is primarily due to moving camera while recording, the car parked in the area gets out from the marked spot. Using Twilio API, we can easy generate a number and use it to send a custom message to our own cell phone whenever there's a vacancy available to park. There's a great medium post here which describes the process flow. The underlying assumption is that, the first frame will determine the parking spots and no car in the first frame should be a moving one.
 
