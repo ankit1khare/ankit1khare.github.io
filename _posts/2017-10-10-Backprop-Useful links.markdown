@@ -2,7 +2,7 @@
 layout: post
 title:  "Collection of Material to understand BackProp"
 description: Backbone of Neural Networks - Backprop
-date:   2018-10-02 17:55:52 +0200
+date:   2017-10-10 17:55:52 +0200
 --- 
 
 I went through all of the links which I've given below and find them to be a comprehensive guide to understanding backpropagation. Please consider going through below mentioned awesome tutorials and articles for getting a solid grip on backprop as it is the backbone of neural networks. 
