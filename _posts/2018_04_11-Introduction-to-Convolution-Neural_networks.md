@@ -1,5 +1,8 @@
 A Beginner's Guide To Understanding Convolutional Neural Networks
 
+![](/assets/Cover.png)
+
+
 Introduction
                 Convolutional neural networks, the three words together sounds like a weird combination of biology and math with a little flavor of computer science sprinkled in, but these networks have been some of the most influential inventions in the field of Computer Vision. The year 2012 was the first year that neural nets grew to prominence. Alex Krizhevsky used them to win that year’s ImageNet competition (the annual Olympics of computer vision in simple terms), dropping the classification error record from 26% to 15%, an astounding improvement at the time. Ever since, a plethora of companies have been using deep learning at the core of their services. The classic, and arguably most popular, use case of these networks is for image processing. Within image processing, let’s take a look at how to use these CNNs for image classification.
 
