@@ -1,17 +1,17 @@
 ---
 layout: post
-title:  "BackProp"
+title:  "Collection of Material to understand BackProp"
 description: Backbone of Neural Networks - Backprop
 date:   2018-10-02 17:55:52 +0200
 --- 
 
-This is an incomplete post as of now. I went through all of the links which I've given below. I'd write my own insight about how I went about understanding backprop as soon as I could make time for it. For the time being, please consider going through below mentioned awesome tutorials and articles. 
+I went through all of the links which I've given below and find them to be a comprehensive guide to understanding backpropagation. Please consider going through below mentioned awesome tutorials and articles for getting a solid grip on backprop as it is the backbone of neural networks. 
 
 1. [http://cs231n.stanford.edu/handouts/linear-backprop.pdf](http://cs231n.stanford.edu/handouts/linear-backprop.pdf){:target="_blank"}
 
 2. [http://cs231n.github.io/optimization-2/](http://cs231n.github.io/optimization-2/){:target="_blank"}
 
-3. [http://neuralnetworksanddeeplearning.com/chap2.html](http://neuralnetworksanddeeplearning.com/chap2.html) {:target="_blank"} (http://neuralnetworksanddeeplearning.com/chap1.html#implementing_our_network_to_classify_digits)
+3. [http://neuralnetworksanddeeplearning.com/chap2.html](http://neuralnetworksanddeeplearning.com/chap2.html){:target="_blank"} 
 
 4. [https://github.com/dennybritz/nn-from-scratch/blob/master/nn-from-scratch.ipynb](https://github.com/dennybritz/nn-from-scratch/blob/master/nn-from-scratch.ipynb){:target="_blank"}
 
