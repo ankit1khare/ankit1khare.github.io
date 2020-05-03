@@ -2,7 +2,9 @@
 layout: post
 title: "Street Parking using Deep Learning and Computer Vision"
 description: "Detects vacant and occupied parking space on a street and sends a text whenever a space is available to park"
-excerpt: "<img src="https://github.com/ankit1khare/ankit1khare.github.io/blob/master/_posts/gifs/test_vid.gif?raw=true" style="max-width:100%;display: block;margin-left: auto;margin-right: auto;" alt>"
+excerpt: "Detects vacant and occupied parking space on a street and sends a text whenever a space is available to park"
+images:
+  - url: /blob/master/_posts/gifs/test_vid.gif
 date: 2019-01-29 16:20 +0200
 ---
 
