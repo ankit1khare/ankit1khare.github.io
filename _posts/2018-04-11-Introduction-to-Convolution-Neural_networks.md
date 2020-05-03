@@ -1,3 +1,10 @@
+---
+layout: post
+excerpt: Don't worry, it's easier than it sounds
+images:
+  - url: /assets/Cover.png
+---
+
 A Beginner's Guide To Understanding Convolutional Neural Networks
 
 ![](/assets/Cover.png)
