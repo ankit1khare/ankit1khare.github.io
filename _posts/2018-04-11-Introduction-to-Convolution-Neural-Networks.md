@@ -74,21 +74,26 @@ Disclaimer: The filter I described in this section was simplistic to describe th
 (Quick Note: The above image was taken from Stanford's CS 231N course taught by Andrej Karpathy and Justin Johnson. Recommend to anyone seeking a deeper understanding of CNNs.)
 
 
-## Going Deeper Through the Network
+**Going Deeper Through the Network**
+
 Now, there are other layers in a traditional convolutionary neural network architecture that are interspersed between these layers. I would strongly encourage those interested to read about them and understand their function and effects, but in general, they do provide nonlinearities and dimensional preservation that help improve network robustness and control overfitting. So would look like a classic CNN architecture.
 
 ![](/assets/Table.png)
 
 However, the last layer is an important one which we will go into later. Just take a step back and review what we have learned up to now. We have talked about what the filters are designed to detect in the first conv layer. They detect features of low levels, such as edges and curves. As one would imagine, we need the network to be able to recognize higher-level features such as hands or paws or ears to predict whether an image is a type of object. So let's ponder what the network output is after the first conv layer. It would be a volume of 28 x 28 x 3 (assuming we will use three 5 x 5 x 3 filters). The output of the first conver layer becomes the input of the 2nd conv layer when we go through another conv layer. Now, that's a bit more difficult to visualize. When we spoke of the first layer, the input was simply the original image.When we talk about the 2nd conv layer, though, the input is the activation map(s) that result from the first layer. Thus each input layer basically describes the locations in the original image for which certain features of the low level appear. Now, if you apply a set of filters on top of that (pass it through the 2nd conv layer), the output will be activations representing features of higher levels. Types of these features might be semicircles (combining a curve and a straight edge) or squares (combining several straight edges). As you pass through the network and more conv layers, you get activation maps that represent increasingly complex features. You may have some filters at the end of the network that activate when handwriting occurs in the image, filters that activate when viewing pink objects etc. If you want more information about filter visualization in ConvNets, Matt Zeiler and Rob Fergus had an excellent research paper on the topic. Jason Yosinski also has a YouTube video which gives a great visual representation.Another interesting thing to note is that as you go deeper into the network, the filters start to have a larger and larger receptive field which means they can consider information from a larger area of the original input volume (another way to put it is that they are more responsive to a larger area of pixel space).
 
-## Fully Connected Layer
+
+**Fully Connected Layer**
+
 Now that we can detect these high-level features, a fully connected layer is attached to the network end by the icing on the cake. This layer basically takes an input volume (whatever the output is of the preceding conv or ReLU or pool layer) and outputs a N dimensional vector where N is the number of classes from which the program must choose. For example, if you wanted a program for digit classification, N would be 10, because there are 10 digits. Each number in this N dimension vector represents the likelihood of some class. For example, if the resulting vector for a digit classification program is [0 .1.1.75.0 0 0 0 0 0.05], then this represents a 10 percent probability of the image being a 1, a 10 percent probability of the image being a 2, a 75 percent probability of the image being a 3, and a 5 percent probability of the image being a 9 (Side note: there are other ways you can represent the output, but I'm a 3) The way this fully connected layer works is by looking at the output of the previous layer (which, as we remember, should represent the high-level activation maps) and determining which features are most correlated to a particular class.For example, if the program predicts that some image is a dog, the activation maps will have high values that represent high-level features like a paw or 4 legs etc. Similarly, if the program predicts that some image is a bird, the activation maps will contain high values that represent high-level features like wings or a beak, etc. Basically, an FC layer looks at what high-level features most closely correlate with a particular class and has particular weights so you get the right probabilities for the different classes when you calculate the products between the weights and the previous layer.
 
 
 ![](/assets/LeNet.png)
 
-Training (AKA:What Makes this Stuff Work)
-                Now, this is the one aspect of the neural networks that I have not yet deliberately mentioned and that is probably the most important part. You may have had lots of questions while reading. How do the filters know to look for edges and curves in the first conv layer? How does the layer that is fully connected know which activation maps to view? How do the filters know what values to have in every layer? The way the computer can adjust its filter values (or weights) is through a process called backpropagation training.
+
+**Training (AKA:What Makes this Stuff Work)**
+
+Now, this is the one aspect of the neural networks that I have not yet deliberately mentioned and that is probably the most important part. You may have had lots of questions while reading. How do the filters know to look for edges and curves in the first conv layer? How does the layer that is fully connected know which activation maps to view? How do the filters know what values to have in every layer? The way the computer can adjust its filter values (or weights) is through a process called backpropagation training.
 
 Before we get into backpropagation, first we have to take a step back and talk about what a neural network needs to work with. Our minds were fresh at the moment we were all born. We didn't know what it was that cat or dog or bird. In a similar way, the weights or filter values are randomized before the CNN starts. The filters are unfamiliar with looking for edges and curves. In the higher layers the filters don't know how to look for paws and beaks. However, as we grew older our parents and teachers showed us various images and pictures and gave us a corresponding label. This idea of being given an image and a label is the process of training CNNs undergo. Before we get into it too, let's just say we have a training set with thousands of pictures of dogs, cats and birds and each of the pictures has a label of what that picture is like. Return to Backprop.
 
@@ -110,11 +115,15 @@ The learning rate is a parameter selected by the programmer. A high learning rat
 
 One training iteration is the process of forward pass, loss function, backward passage, and parameter update. For each set of training images the program will repeat this process for a fixed number of iterations (commonly called a batch).Once you finish updating the parameter on the last example of the training, hopefully the network should be trained well enough so that the layers' weights are correctly tuned.
 
-Testing
-              Finally, to see if our CNN works or not, we have a different set of images and labels (can't double dip between training and testing!) and the images are passed through the CNN. We compare the outputs with the reality on the ground and see if our network is working!
 
-How Companies Use CNNs
-             Data, figures, data. The firms that have lots of that magic 4 letter word are those that have an inherent advantage over the rest of the competition. The more training data you can give to a network, the more training iterations you can make, the more weight updates you can make, and when it goes to production, the better the network tuned. Facebook (and Instagram) can use all the pictures of the billion users it currently has, Pinterest can use information of the 50 billion pins on its website, Google can use search data and Amazon can use data from the millions of products that are purchased daily. And now you are aware of the magic behind how they use it.
+**Testing**
+
+Finally, to see if our CNN works or not, we have a different set of images and labels (can't double dip between training and testing!) and the images are passed through the CNN. We compare the outputs with the reality on the ground and see if our network is working!
+
+
+**How Companies Use CNNs**
+
+Data, figures, data. The firms that have lots of that magic 4 letter word are those that have an inherent advantage over the rest of the competition. The more training data you can give to a network, the more training iterations you can make, the more weight updates you can make, and when it goes to production, the better the network tuned. Facebook (and Instagram) can use all the pictures of the billion users it currently has, Pinterest can use information of the 50 billion pins on its website, Google can use search data and Amazon can use data from the millions of products that are purchased daily. And now you are aware of the magic behind how they use it.
 
 Disclaimer  
                 Although this post should be a good beginning to understand CNNs, it is by no means a comprehensive overview. Things that are not discussed in this post include the nonlinear and pooling layers as well as network hyperparameters such as filter sizes, steps, and padding. Topics such as network architecture, batch standardization, fading gradients, dropout, initialization techniques, non-convex optimization, bases, loss function choices, data increase, regulation methods, computational considerations, backpropagation modifications, and more were also not discussed (still).
