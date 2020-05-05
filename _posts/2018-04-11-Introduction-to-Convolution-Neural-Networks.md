@@ -1,8 +1,12 @@
 ---
 layout: post
+title: "Intro to CNN"
+description: "A guide to understand CNN"
 excerpt: "Don't worry, it's easier than it sounds"
+date: 2018-04-11 13:20 +0200
 
 ---
+
 
 
 ![](/assets/Cover.png)
