@@ -4,7 +4,6 @@ title: "Intro to CNN"
 description: "A guide to understand CNN"
 excerpt: "Don't worry, it's easier than it sounds"
 date: 2018-04-11 13:20 +0200
-
 ---
 
 
@@ -14,24 +13,21 @@ date: 2018-04-11 13:20 +0200
 
 
 ## **Introduction**
-Convolutional Neural Networks, the three words together sounds like a weird combination of biology and math with a little flavor of computer science sprinkled in, but these networks have been some of the most influential inventions in the field of Computer Vision. The year 2012 was the first year that neural nets grew to prominence. Alex Krizhevsky used them to win that year’s ImageNet competition (the annual Olympics of computer vision in simple terms), dropping the classification error record from 26% to 15%, an astounding improvement at the time. Ever since, a plethora of companies have been using deep learning at the core of their services. The classic, and arguably most popular, use case of these networks is for image processing. Within image processing, let’s take a look at how to use these CNNs for image classification.
+
 
 ## **The Problem Space**
-Image classification is the task of taking an input image and outputting a class (cat, dog, etc.) or a probability of classes that best describe the image. For humans, this task of recognition is one of the first skills that we acquire from the moment we are born and is something that comes as adults naturally and without effort. Without even thinking twice, we're able to identify the environment we're in, quickly and seamlessly. When we see an image or just look at the world around us, most of the time we can immediately characterize the scene and give each object a label, all without even noticing it consciously. These skills of being able to recognize patterns quickly, generalize from previous knowledge, and adapt to various image environments are those we do not share with our fellow machines.
 
 ![](/assets/Corgi3.png)
 
 
-**Inputs and Outputs to the network**
-
+## **Inputs and Outputs to the network**
 When a computer views an image (takes an image as input), an array of pixel values will appear. Depending on the image resolution and size, an array of numbers 32 x 32 x 3 (the 3 refers to RGB values) will appear. Just to drive the point home, let's say we have a JPG-form color image and its size is 480 x 480. The representational array is set to be 480 x 480 x 3. Each of these numbers is given a value from 0 to 255 that describes the intensity of the pixels at that point. These numbers are the only inputs available to the computer, though they are meaningless to us when we perform image classification. The idea is to give this array of numbers to the computer and output numbers will describe the likelihood of the image being a certain class (.80 for cat,.15 for dog,.05 for bird, etc.).
 
-**What We Want our Computer to Do**
-
+## **What We Want our Computer to Do**
 Now that we know the issue and the inputs and outputs, let's think about how to approach it. What we want the computer to do is to be able to distinguish between all the images it is given and to figure out the unique characteristics that make a dog a dog or make a cat. That is the process that also goes on subconsciously in our minds. Looking at a dog's picture we can classify it as such if the picture has identifiable features like paws or 4 legs. Similarly, by searching for low-level features such as edges and curves, the computer is able to perform image classification, and then build up to more abstract concepts through a series of convolutional layers. This was a general overview of what CNN does. Now, let’s get into the specifics.
 
-**Biological Connection**
 
+## **Biological Connection**
 But first, history to a little bit. You may have been thinking about something related to neuroscience or biology when you first heard of the term convolutional neural networks, and you would be right. Class of. CNNs take the visual cortex from a biological inspiration. The visual cortex has tiny regions of cells that are sensitive to specific visual field regions. A fascinating experiment by Hubel and Wiesel in 1962 (Video) expanded this idea, where they showed that some individual neuronal cells in the brain responded (or fired) only in the presence of edges of a certain orientation. Hubel and Wiesel found that all of these neurons were arranged in a columnar architecture and were able to generate visual perception together. This concept of specialized components inside a system with different tasks (neuronal cells in the visual cortex looking for similar characteristics) is often used by machines and is the basis behind CNNs.
 
 **Structure**
