@@ -5,7 +5,7 @@ images:
   - url: /assets/Cover.png
 ---
 
-Introduction to Convolutional Neural Networks
+## Introduction to Convolutional Neural Networks
 
 ![](/assets/Cover.png)
 
@@ -21,23 +21,24 @@ Image classification is the task of taking an input image and outputting a class
 ![](/assets/Corgi3.png)
 
 
-## Inputs and Outputs to the network
+**Inputs and Outputs to the network**
 
 When a computer views an image (takes an image as input), an array of pixel values will appear. Depending on the image resolution and size, an array of numbers 32 x 32 x 3 (the 3 refers to RGB values) will appear. Just to drive the point home, let's say we have a JPG-form color image and its size is 480 x 480. The representational array is set to be 480 x 480 x 3. Each of these numbers is given a value from 0 to 255 that describes the intensity of the pixels at that point. These numbers are the only inputs available to the computer, though they are meaningless to us when we perform image classification. The idea is to give this array of numbers to the computer and output numbers will describe the likelihood of the image being a certain class (.80 for cat,.15 for dog,.05 for bird, etc.).
 
-## What We Want our Computer to Do
+**What We Want our Computer to Do**
 
 Now that we know the issue and the inputs and outputs, let's think about how to approach it. What we want the computer to do is to be able to distinguish between all the images it is given and to figure out the unique characteristics that make a dog a dog or make a cat. That is the process that also goes on subconsciously in our minds. Looking at a dog's picture we can classify it as such if the picture has identifiable features like paws or 4 legs. Similarly, by searching for low-level features such as edges and curves, the computer is able to perform image classification, and then build up to more abstract concepts through a series of convolutional layers. This was a general overview of what CNN does. Now, let’s get into the specifics.
 
-## Biological Connection
+**Biological Connection**
 
 But first, history to a little bit. You may have been thinking about something related to neuroscience or biology when you first heard of the term convolutional neural networks, and you would be right. Class of. CNNs take the visual cortex from a biological inspiration. The visual cortex has tiny regions of cells that are sensitive to specific visual field regions. A fascinating experiment by Hubel and Wiesel in 1962 (Video) expanded this idea, where they showed that some individual neuronal cells in the brain responded (or fired) only in the presence of edges of a certain orientation. Hubel and Wiesel found that all of these neurons were arranged in a columnar architecture and were able to generate visual perception together. This concept of specialized components inside a system with different tasks (neuronal cells in the visual cortex looking for similar characteristics) is often used by machines and is the basis behind CNNs.
 
-## Structure
+**Structure**
 
 Back to particulars. A more detailed overview of what CNNs are doing would be taking the image, passing it through a series of convolutionary, nonlinear, pooling (downsampling), and fully connected layers, and getting an output. As we said earlier, the output can be either a single class, or a class probability that best describes the image. The hard part now is the understanding of what each of these layers is doing. So let's get to the most significant one.
 
-## First Layer – Math Part
+
+**First Layer – Math Part**
 
 In a CNN the first layer is always a Convolutionary layer. First thing to make sure that you remember is what the layer of input to this conv (I will use that abbreviation a lot) is. As we already mentioned, the input is a pixel value array of 32 x 32 x 3. Now, the best way to explain a conv layer is to imagine a flashlight that shines above the image at the top left. Let's say the light which this flashlight shines covers an area of 5 x 5. And now, let's imagine this sliding flashlight across all areas of the input image. In terms of machine learning, this flashlight is called a filter (or sometimes referred to as a neuron or kernel) and is called the receptive field, the region it shines over. Now this filter is a number array, too (numbers are called weights or parameters). A very important note is that the depth of this filter must be the same as the depth of the input (this ensures the math works out), so this filter's dimensions are 5 x 5 x 3. Now let's take for example the first position the filter is in. That would be the left corner at the top. Since the filter slides or converts around the input image, the values in the filter are multiplied by the original pixel values of the image (aka computing element wise multiplications). These multiplications are all summed up (in mathematical terms, that would be a total of 75 multiplications). So, you got a single number now. Remember, that number only represents when the filter is at the top left of the image. Now, for every location on the volume of input we repeat this process. (The next step would be to move the filter in 1 unit to the right, then in 1 again to the right and so on). Every single location produces a number on the input volume. After sliding the filter across all the locations, you'll find out that what you're left with is a number array of 28 x 28 x 1 that we call an activation map or feature map. The reason you get a 28 x 28 array is that a 5 x 5 filter can fit on a 32 x 32 input image with 784 different locations. Those 784 numbers are mapped to an array of 28 x 28.
 
