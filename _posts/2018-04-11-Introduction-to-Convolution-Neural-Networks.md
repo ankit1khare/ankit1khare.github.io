@@ -1,8 +1,6 @@
 ---
 layout: post
-excerpt: Don't worry, it's easier than it sounds
-images:
-  - url: /assets/Cover.png
+excerpt: "Don't worry, it's easier than it sounds"
 ---
 
 ## Introduction to Convolutional Neural Networks
