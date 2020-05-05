@@ -13,9 +13,11 @@ date: 2018-04-11 13:20 +0200
 
 
 ## **Introduction**
+Convolutional Neural Networks, the three words together sounds like a weird combination of biology and math with a little flavor of computer science sprinkled in, but these networks have been some of the most influential inventions in the field of Computer Vision. The year 2012 was the first year that neural nets grew to prominence. Alex Krizhevsky used them to win that year’s ImageNet competition (the annual Olympics of computer vision in simple terms), dropping the classification error record from 26% to 15%, an astounding improvement at the time. Ever since, a plethora of companies have been using deep learning at the core of their services. The classic, and arguably most popular, use case of these networks is for image processing. Within image processing, let’s take a look at how to use these CNNs for image classification.
 
 
 ## **The Problem Space**
+Image classification is the task of taking an input image and outputting a class (cat, dog, etc.) or a probability of classes that best describe the image. For humans, this task of recognition is one of the first skills that we acquire from the moment we are born and is something that comes as adults naturally and without effort. Without even thinking twice, we're able to identify the environment we're in, quickly and seamlessly. When we see an image or just look at the world around us, most of the time we can immediately characterize the scene and give each object a label, all without even noticing it consciously. These skills of being able to recognize patterns quickly, generalize from previous knowledge, and adapt to various image environments are those we do not share with our fellow machines.
 
 ![](/assets/Corgi3.png)
 
