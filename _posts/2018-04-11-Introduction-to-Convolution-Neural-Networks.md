@@ -46,7 +46,9 @@ In a CNN the first layer is always a Convolutionary layer. First thing to make s
 
 (Quick Note: Some of the images, including the one above, I used came from this awesome book, Michael Nielsen's "Neural Networks and Deep Learning." Strongly recommended.) Let's say now that we're using two 5 x 5 x 3 filters instead of one. Our volume of output would then be 28 x 28 x 2. We are able to preserve the spatial dimensions better by using more filters. This is mathematically what happens in a convolutional layer.
 
-## First Layer – High Level Perspective
+
+**First Layer – High Level Perspective**
+
 Let's talk about what this convolution actually does from a high standard, though. One can think of each of these filters as feature identifiers. I'm talking about things like straight edges, simple colours, and curves when I say features. Think about the simplest features all the images have in common. Let's say that our first filter is 7 x 7 x 3, and will be a detector of curves. (In this section, let's overlook the fact that the filter is 3 units deep and only consider the filter's top depth slice and the image, for simplicity.) The filter will have a pixel structure as a curve detector in which there will be higher numerical values along the area that is a curve shape (remember, those filters we're talking about as numbers!).               
 
 ![](/assets/Filter.png)
